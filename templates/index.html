@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Prediction</title>
+    <style>
+        /* General body styling with background image */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://png.pngtree.com/thumb_back/fw800/background/20240710/pngtree-stay-motivated-stay-fit-image_15870171.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Centered container */
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Slight transparency for readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Headings */
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Labels */
+        label {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Inputs & Select */
+        input, select {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Button */
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Details for Calorie Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Gender:</label>
+            <select name="gender">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>Height (cm):</label>
+            <input type="number" name="height" required>
+
+            <label>Weight (kg):</label>
+            <input type="number" name="weight" required>
+
+            <label>Duration (mins):</label>
+            <input type="number" name="duration" required>
+
+            <label>Heart Rate (bpm):</label>
+            <input type="number" name="heart_rate" required>
+
+            <label>Body Temp (°C):</label>
+            <input type="number" name="body_temp" step="0.1" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
